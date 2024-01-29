@@ -1,0 +1,39 @@
+// NOT THING TO DO WITH GENERIC
+const addOne = (a: number): number => {
+  return a + 1;
+};
+
+const addTwo = (a: number): number => {
+  return a + 2;
+};
+
+const add = (a: number, b: number): number => {
+  return a + b;
+};
+
+add(10, 1);
+add(10, 2);
+add(10, 3);
+
+class HoldNumber {
+  data: number;
+}
+class HoldString {
+  data: string;
+}
+// const holdNumber = new HoldNumber();
+// holdNumber.data = 123;
+// const holdString = new HoldString();
+// holdString.data = 'dklajl;jkd';
+
+class HoldAnyThing<TypeOfData> {
+  data: TypeOfData;
+  add(a: TypeOfData): TypeOfData {
+    return a;
+  }
+}
+const holdNumber = new HoldAnyThing<number>();
+holdNumber.data = 123;
+holdNumber.add(555);
+const holdString = new HoldAnyThing<string>();
+holdString.data = 'dklajl;jkd';
